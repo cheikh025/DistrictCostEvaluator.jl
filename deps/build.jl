@@ -16,7 +16,7 @@ function run_build_script()
         run(`make`)
     end
 end
-lkh_dir = joinpath(project_dir, "lkh")
+lkh_dir = joinpath(project_dir, "LKH")
 lkh_build_dir = joinpath(lkh_dir, "build")
 function run_build_lkh()
     # Create the build directory if it doesn't exist

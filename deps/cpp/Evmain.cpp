@@ -58,7 +58,7 @@ double get_value_tsp(District *myDistrict, Params params, int scenarioNumber)
     vector<Point> evaluationPoints = eval_points(myDistrict, params, scenarioNumber);
     params.generateTSPinstance(evaluationPoints, scenarioNumber);
 	//fs::path exe_path = "./lkh";
-	fs::path exe_path = "lkh/build/lkh";
+	fs::path exe_path = "LKH/build/lkh";
 	std::string command = exe_path.string() + " "+params.outputName +to_string(scenarioNumber)+".par";
 	double c = system(command.c_str());
 
