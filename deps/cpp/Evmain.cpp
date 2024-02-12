@@ -58,7 +58,20 @@ double get_value_tsp(District *myDistrict, Params params, int scenarioNumber)
     vector<Point> evaluationPoints = eval_points(myDistrict, params, scenarioNumber);
     params.generateTSPinstance(evaluationPoints, scenarioNumber);
 	//fs::path exe_path = "./lkh";
-	fs::path exe_path = "./../deps/LKH/build/lkh";
+	//fs::path exe_path = "./../deps/LKH/build/lkh";
+	fs::path current_file_path = __FILE__;
+    
+    // Remove the filename to get the directory of the current source file
+    fs::path current_dir_path = current_file_path.parent_path();
+    
+    // Append the relative path to the directory of the current source file
+    fs::path target_path = current_dir_path / ".." / "deps" / "LKH" / "build" / "lkh";
+    
+    // Optionally, convert to an absolute path and normalize
+    target_path = fs::canonical(target_path);
+
+    std::cout << "Target path: " << target_path << std::endl;
+	fs::path exe_path = target_path;
 	std::string command = exe_path.string() + " "+params.outputName +to_string(scenarioNumber)+".par";
 	double c = system(command.c_str());
 
