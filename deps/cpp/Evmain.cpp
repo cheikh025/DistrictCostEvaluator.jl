@@ -66,9 +66,6 @@ double get_value_tsp(District *myDistrict, Params params, int scenarioNumber)
     
     // Append the relative path to the directory of the current source file
     fs::path target_path = current_dir_path / ".." / "deps" / "LKH" / "build" / "lkh";
-    
-    // Optionally, convert to an absolute path and normalize
-    target_path = fs::canonical(target_path);
 
     std::cout << "Target path: " << target_path << std::endl;
 	fs::path exe_path = target_path;
