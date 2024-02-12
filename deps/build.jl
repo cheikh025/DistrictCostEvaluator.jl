@@ -31,8 +31,10 @@ function run_build_lkh()
 end
 
 # Only run the build script if the library has not been built yet
-#if !isfile(joinpath(build_dir, "libCostEvaluator.so"))
-#    run_build_script()
-#end
-run_build_lkh()
-run_build_script()
+if !isfile(joinpath(build_dir, "libCostEvaluator.so"))
+    run_build_script()
+end
+
+if !isfile(joinpath(lkh_build_dir, "lkh"))
+    run_build_lkh()
+end
