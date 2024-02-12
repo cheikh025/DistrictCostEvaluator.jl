@@ -1,4 +1,5 @@
 module DistrictCostEvaluator
+   include("../deps/build.jl")
 
     using CxxWrap
     # Define a function that returns the library path
