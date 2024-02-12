@@ -15,7 +15,7 @@ module DistrictCostEvaluator
     
     # Define a Julia function that calls the C++ function
     function evaluate_cost(districts, instance_name)
-        return @cxx DistrictCostEvaluator.EVmain(districts, instance_name)
+        return DistrictCostEvaluator.EVmain(districts, instance_name)
     end
 
     export evaluate_cost
