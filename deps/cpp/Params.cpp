@@ -65,7 +65,7 @@ void Params::readScenarionJSON()
 	                        + to_string(instanceSize) + "_" 
 							+ to_string(targetSizeDistricts) + ".json";
 	ifstream myfile;
-	string fileName = "src/Scenario/output/" + scenarioFileName;
+	string fileName = "Scenario/output/" + scenarioFileName;
 	cout<<"fileName"<<fileName<<endl;
 	myfile.open(fileName);
 
@@ -159,7 +159,7 @@ void Params::generateTSPinstance(vector<Point> &points, int scenarioNumber)
 
 void Params::readBlockssJSON()
 {
-	string fileName = "data/geojson/" + instanceName + ".geojson";
+	string fileName = "data/" + instanceName + ".geojson";
 
 	ifstream myfile;
 	myfile.open(fileName);
