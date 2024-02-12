@@ -18,16 +18,7 @@ public:
 
 	vector < int > evaluationNbCustomers;						// Number of customers sampled in each TSP cost evaluation
 	double averageCost=0.;											// Average TSP cost over all Scenarios
-	double averageOnlyDepotCost= 0.;	
-	double averageNoDepotCost=0.;      
-
-	// Comparison operator
-	bool operator <(const District& d)
-	{
-		if (blocks.size() != d.blocks.size()) return (blocks.size() < d.blocks.size());
-		else return (blocks < d.blocks);
-	}
-	
+  
 	// Constructor
 	District(set < int > & blocks) : blocks(blocks)
 	{};			

@@ -46,25 +46,16 @@ public:
 	Point referencePoint = {0, 0};				 // Point representing the reference position in XY coordinates (always 0,0 per definition)
 	array<double, 2> depotLongLat;				 // Depot longitude and latitude
 	set<array<double, 2>> allPointsLongLat;		 // All points in the considered instance
-	vector<Blocks> blocks;						 // Information on the blocks
+	vector<Block> blocks;						 // Information on the blocks
 	vector<District> randomDistricts;			 // Vector representing the districts which have been selected for the training set
 	double minX = 1.e30;						 // Minimum X coordinate of the vertices of the entire dataset
 	double maxX = -1.e30;						 // Maximum X coordinate of the vertices of the entire dataset
 	double minY = 1.e30;						 // Minimum Y coordinate of the vertices of the entire dataset
-	double maxY = -1.e30;						 // Maximum Y coordinate of the vertices of the entire dataset
-	int totalInhabitants = 0;					 // Total number of inhabitants in the blocks
-	int minInhabitants = INT_MAX;				 // Minimum number of inhabitants in the blocks
-	int maxInhabitants = 0;						 // Maximum number of inhabitants in the blocks
-	double totalArea = 0;						 // Total area of the blocks
-	double minArea = 1.e30;						 // Minimal area of a block
-	double maxArea = 0.;						 // Maximum area of a block
+	double maxY = -1.e30;						 // Maximum Y coordinate of the vertices of the entire dataset						 // Maximum area of a block
 	vector<long int> totalCustomersScenarios;	 // totalCustomersScenarios[nb] will count the total number of customers involved in Scenarios for districts with nb blocks
 	vector<double> averageCustomersScenarios;	 // totalCustomersScenarios[nb] will count the average number of customers involved in Scenarios for districts with nb blocks
 	vector<int> totalDistrictsNbBlockss;			 // totalDistrictsNbBlockss[nb] will count the total number of districts with nbBlockss in the training set
 
-	/* TIME MEASUREMENT */
-	clock_t startTime; // Time when the generation of the training examples started
-	clock_t endTime;   // Time when the generation of the training examples started
 
 	/* FUNCTIONS TO READ FILE AND SET UP THE DATA STRUCTURES */ // Blockss which have been flagged to be ignored in the datasets (to avoid connectivity issues)
 

@@ -79,8 +79,6 @@ void Params::readScenarionJSON()
 		for (auto &block : fileContent.at("blocks"))
 		{
 			int blockId = block.at("ID");
-			
-			blocks[blockId].distDepot = block.at("DEPOT_DIST");
 			blocks[blockId].testScenarios = vector<vector<Point>>();
 
 			for (auto &scenario : block.at("Scenarios"))
@@ -174,7 +172,7 @@ void Params::readBlockssJSON()
 
 		for (auto& currentBlocks : fileContent.at("features"))
 		{
-			Blocks block;
+			Block block;
 			block.id = currentBlocks.at("properties").at("ID");
 			if(block.id > instanceSize-1) continue;
 			block.verticesPoints = vector<Point>();
