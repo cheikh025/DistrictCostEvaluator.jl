@@ -65,7 +65,7 @@ double get_value_tsp(District *myDistrict, Params params, int scenarioNumber)
     fs::path current_dir_path = current_file_path.parent_path();
     
     // Append the relative path to the directory of the current source file
-    fs::path target_path = current_dir_path / ".." / "deps" / "LKH" / "build" / "lkh";
+    fs::path target_path = current_dir_path / ".."/ "LKH" / "build" / "lkh";
 
     std::cout << "Target path: " << target_path << std::endl;
 	fs::path exe_path = target_path;
